@@ -1,17 +1,18 @@
-module.exports = {
+var path = require('path');
 
+module.exports = {
     mode: 'development',
-    entry: `${__dirname}/src/index.js`,
+    entry: path.resolve(__dirname, 'src') + '/app/index.js',
     output: {
-        path: `${__dirname}/dist/app`,
+        path: path.resolve(__dirname, 'dist') + '/app',
         filename: 'bundle.js',
         publicPath: '/app/'
     },
     module: {
-        rules: [
+        loaders: [
             {
                 test: /\.js$/,
-                include: `${__dirname}/src`,
+                include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015']
