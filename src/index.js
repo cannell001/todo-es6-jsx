@@ -5,12 +5,15 @@ import { render } from 'react-dom';
 export class TodoComponent extends React.Component{
     render(){
         return(
-            <h1>Using ES6 Classes</h1>
+            <div>
+                <h1>Using ES6 Classes with props</h1>
+                <p>{this.props.msg}</p>
+            </div>
         );
     }
 };
 
 render(
-	<TodoComponent/>,
+	<TodoComponent msg="who cut the cheese"/>,
 	document.getElementById('todo-wrapper')
 )
