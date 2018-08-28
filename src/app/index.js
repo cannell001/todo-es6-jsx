@@ -11,18 +11,28 @@ var TodoComponent = React.createClass({
     render: function(){
         var todos = this.state.todos;
         todos = todos.map(function(item, index){
-            return(
-                    <li>{item}</li>
-            );
+            return(<TodoItem key={index} item={item} />);
         });
         return(
             <div id="todo-list">
-                <h2>State Part 2 w/ ES6</h2>
                 <p>The busiest people have the most leisure...</p>
                 <ul>{todos}</ul>
             </div>
         );
     } //render
+});
+
+//Create TodoItem component
+var TodoItem = React.createClass({
+    render: function(){
+        return(
+            <li>
+                <div className="todo-item">
+                    <span className="item-name">{this.props.item}</span>
+                </div>
+            </li>
+        );
+    }
 });
 
 ReactDOM.render(<TodoComponent />, document.getElementById('todo-wrapper'));
