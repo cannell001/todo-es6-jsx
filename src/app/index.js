@@ -15,6 +15,7 @@ var TodoComponent = React.createClass({
         });
         return(
             <div id="todo-list">
+                <h2>Separate TodoItem Component - ES6</h2>
                 <p>The busiest people have the most leisure...</p>
                 <ul>{todos}</ul>
             </div>
