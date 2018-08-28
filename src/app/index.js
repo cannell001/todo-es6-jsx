@@ -5,19 +5,21 @@ var ReactDOM = require('react-dom');
 var TodoComponent = React.createClass({
     getInitialState: function(){
         return {
-            todos: ['wash up', 'eat some cheese', 'take a nap']
+            todos: ['wash up', 'eat some cake', 'take a nap']
         }
     }, //getInitialState
     render: function(){
+        var todos = this.state.todos;
+        todos = todos.map(function(item, index){
+            return(
+                    <li>{item}</li>
+            );
+        });
         return(
             <div id="todo-list">
-                <h2>State in ES6</h2>
+                <h2>State Part 2 w/ ES6</h2>
                 <p>The busiest people have the most leisure...</p>
-                <ul>
-                    <li>{this.state.todos[0]}</li>
-                    <li>{this.state.todos[1]}</li>
-                    <li>{this.state.todos[2]}</li>
-                </ul>
+                <ul>{todos}</ul>
             </div>
         );
     } //render
