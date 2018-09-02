@@ -12,7 +12,7 @@ module.exports = {
       //open: true,
       //contentBase: 'dist',
       //watchContentBase: true,
-      port: 1234
+      port: 1235
   },
   module: {
     rules: [
