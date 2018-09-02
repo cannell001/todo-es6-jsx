@@ -9,7 +9,7 @@ module.exports = {
   },
   devServer: {
       inline: true,
-      //hot: true,
+      //open: true,
       //contentBase: 'dist',
       //watchContentBase: true,
       port: 1234
@@ -19,7 +19,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+            plugins: ['transform-class-properties'],
+            presets: ['react', 'env']
+        }
       },
       {
         test: /\.css$/,
